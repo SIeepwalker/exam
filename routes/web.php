@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [TaskController::class, 'index']);
+Route::get('/task/{id}', [TaskController::class, 'single']);
+
