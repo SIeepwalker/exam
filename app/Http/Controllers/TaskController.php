@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -11,6 +12,13 @@ class TaskController extends Controller
     {
         return view('index', [
             'tasks' => Task::all()
+        ]);
+    }
+
+    public function order()
+    {
+        return view('index', [
+            'tasks' => DB::table("tasks")->orderBy("title")->get()
         ]);
     }
 

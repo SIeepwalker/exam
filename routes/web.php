@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [TaskController::class, 'index']);
+Route::get('/order', [TaskController::class, 'order']);
 Route::get('/task/{id}', [TaskController::class, 'single']);
 Route::get('/task/delete/{id}', [TaskController::class, 'delete']);
 
