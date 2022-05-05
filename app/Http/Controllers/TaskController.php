@@ -20,4 +20,14 @@ class TaskController extends Controller
             'task' => Task::findOrFail($id)
         ]);
     }
+
+    public function delete($id)
+    {
+        $task = Task::findOrFail($id);
+        $task->delete();
+
+        return view('delete', [
+            'task' => $task
+        ]);
+    }
 }
